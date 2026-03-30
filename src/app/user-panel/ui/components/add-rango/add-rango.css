@@ -1,0 +1,80 @@
+.horario-config {
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0px;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.horario-model {
+    background: var(--space);
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.horario-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: solid 1px #ccc;
+    padding-bottom: 10px;
+}
+.horario-dia{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+}
+.horario-inputs{
+    display: flex;
+    gap: 10px;
+    margin: 20px auto;
+    justify-content: center;
+    
+}
+.horario-campo{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.horario-inputs input{
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+.horario-buttons{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    border-top: solid 1px #ccc;
+    padding-top: 10px;
+}
+.horario-buttons button{
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.horario-buttons .save-btn{
+    background-color: var(--details);
+    color: #fff;
+}
+.horario-buttons .save-btn:hover{
+    background-color: var(--primary);
+}
+.horario-buttons .cancel-btn{
+    background-color: #ccc;
+    color: #333;
+}
+.horario-buttons .cancel-btn:hover{
+    background-color: #bbb;
+}
+

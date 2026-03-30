@@ -1,0 +1,7 @@
+.turno-item{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-bottom: solid 1px #ccc;
+    margin-top: 5px;
+    padding: 15px 0;
+}

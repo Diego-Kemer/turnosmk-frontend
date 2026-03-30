@@ -1,0 +1,36 @@
+@if (fecha) {
+
+  <div class="horarios">
+
+    <h3>Horarios disponibles </h3>
+    <p><b>{{ fecha | date: "EEEE d 'de' MMMM" }}</b></p>
+
+    @if (loading()) {
+      <p>Cargando...</p>
+    }
+
+    @if (!loading() && horarios().length === 0) {
+      <p>No hay horarios disponibles</p>
+    }
+
+    <div class="grid">
+
+      @for (hora of horarios(); track hora.hor) {
+
+        <button
+          class="slot"
+          [class.selected]="seleccion() === hora.hor"
+          (click)="seleccionarHora(hora.hor)"
+          [disabled]="hora.disp"
+        >
+          {{ hora.hor }}
+        </button>
+
+      }
+
+    </div>
+
+  </div>
+
+}
+

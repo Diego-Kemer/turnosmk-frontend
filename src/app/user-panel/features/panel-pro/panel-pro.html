@@ -1,0 +1,65 @@
+<div class="body">
+  <nav [class.active]="menuOpen">
+    <div class="nav-title">
+      <img src="logo.jpeg" alt="" />
+      <h4>Turnos MK</h4>
+    </div>
+    <div class="nav-links" (click)="toggleMenu()">
+      <a routerLink="inicio" routerLinkActive="activo">
+        <span class="material-symbols-outlined"> home </span>
+        <span>Inicio</span>
+      </a>
+      <a routerLink="turnos"  routerLinkActive="activo">
+        <span class="material-symbols-outlined"> assignment_turned_in </span>
+        <span>Turnos</span>
+      </a>
+      <!-- <a routerLink="/user/panel/settings">
+        <span class="material-symbols-outlined">service_toolbox</span>
+        <span>Servicios</span>
+      </a> -->
+      <a routerLink="horarios"  routerLinkActive="activo">
+        <span class="material-symbols-outlined"> timer </span>
+        <span>Horarios</span>
+      </a>
+      <a routerLink="mi-link"  routerLinkActive="activo">
+        <span class="material-symbols-outlined"> link_2 </span>
+        <span>Mi link</span>
+      </a>
+      <a routerLink="clientes"  routerLinkActive="activo">
+        <span class="material-symbols-outlined"> person </span>
+        <span>Clientes</span>
+      </a>
+      <a (click)="logout()">
+        <span class="material-symbols-outlined"> exit_to_app </span>
+        <span>Salir</span>
+      </a>
+    </div>
+  </nav>
+  <div class="principal-panel">
+    <header>
+      <button (click)="toggleMenu()" class="menu-toggle">
+        @if (menuOpen) {
+          <span class="material-symbols-outlined"> close </span>
+        }@else {
+          <span class="material-symbols-outlined"> menu </span>
+        }
+      
+      </button>
+      <div class="header-title">
+        <h2>{{ _empresa()?.name }}</h2>
+      </div>
+      <div class="header-data">
+        <span class="material-symbols-outlined">notifications</span>
+        <img [src]="user()?.avatar + '.jpg'" alt="" />
+      </div>
+    </header>
+    <main>
+      <div class="main">
+        <router-outlet />
+      </div>
+    </main>
+    <footer>
+      <p>© 2024 Turnos MK. Todos los derechos reservados.</p>
+    </footer>
+  </div>
+</div>

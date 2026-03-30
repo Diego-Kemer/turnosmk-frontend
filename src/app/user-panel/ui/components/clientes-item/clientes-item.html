@@ -1,0 +1,14 @@
+<div class="clients-item">
+    <span>{{ cliente?.nombre }}</span>
+    <span>{{ cliente?.email }}</span>
+    <span>{{ cliente?.telefono }}</span>
+    <span>{{ cliente?.ultimaVisita | date:'shortDate' }}</span>
+</div>
+ <div class="mobile-only">
+    <div class="cliente-card" >
+      <h3>{{ cliente?.nombre }}</h3>
+      <p><b>Cel: </b> {{ cliente?.telefono }}</p>
+      <p><b>Email: </b>{{ cliente?.email }}</p>
+      <p> <b>Última visita:</b> {{ cliente?.ultimaVisita  | date:'shortDate'}}</p>
+    </div>
+  </div>

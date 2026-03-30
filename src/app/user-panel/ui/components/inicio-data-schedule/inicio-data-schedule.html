@@ -1,0 +1,18 @@
+<div class="schedule">
+  <div class="schedule-info">
+    <div class="schedule-time">
+      <p>{{ turno.hora }}</p>
+    </div>
+    <div class="schedule-details">
+      <p class="schedule-client"> <strong>{{ turno.nombre }}</strong></p>
+      <p>{{ turno.duracion }} mins</p>
+    </div>
+  </div>
+
+  <div class="schedule-button">
+    <button [ngClass]="turno.estado">
+        <span class="material-symbols-outlined">check_small</span>
+        <span>{{ turno.estado }}</span>
+    </button>
+  </div>
+</div>

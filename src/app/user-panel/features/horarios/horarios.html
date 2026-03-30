@@ -1,0 +1,42 @@
+<div class="horarios">
+  <header>
+    <div class="header-title">
+      <h2>Horarios de atención</h2>
+      <p>Configura los horarios disponibles para tus clientes.</p>
+    </div>
+  </header>
+  <main>
+    <div class="horarios-list">
+      <div class="horarios-dias">
+        @if (form) {
+          <form [formGroup]="form">
+            @for (dia of diasHabiles(); track dia.diaSemana) {
+              <div class="dia">
+                <label>
+                  <input 
+                  type="checkbox" 
+                  [formControlName]="dia.diaSemana" />
+                  {{diaSemana[dia.diaSemana]}}</label>
+              </div>
+            }
+          </form>
+        }
+        <div class="dia-save">
+          <button (click)="saveDias()">
+            <span class="material-symbols-outlined"> save </span>
+            <span>Guardar</span>
+          </button>
+        </div>
+      </div>
+      <div class="horarios-horas">
+        @for (dia of diasHabiles(); track $index) {
+          @if (dia.habilitado) {
+            <app-horarios-item [diaSelect]="dia"></app-horarios-item>
+          }
+        }
+      </div>
+      
+      <!-- Aquí iría la lógica para mostrar y editar los horarios -->
+    </div>
+  </main>
+</div>

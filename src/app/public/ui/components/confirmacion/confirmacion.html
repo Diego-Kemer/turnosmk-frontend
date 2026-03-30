@@ -1,0 +1,39 @@
+@if (loading()) {
+  <div class="estado">
+    <p>Cargando confirmación...</p>
+  </div>
+}
+
+@if (!loading() && error()) {
+  <div class="estado error">
+    <h2>Ocurrió un problema</h2>
+    <p>No pudimos cargar el turno.</p>
+  </div>
+}
+
+@if (!loading() && turno()) {
+
+  <div class="card-confirmacion">
+
+    <div class="icono">✅</div>
+
+    <h2>Turno confirmado</h2>
+
+    <div class="detalle">
+      <p><strong>Fecha:</strong> {{ turno().fecha }}</p>
+      <p><strong>Hora:</strong> {{ turno().hora }}</p>
+      <p><strong>Cliente:</strong> {{ turno().nombre }}</p>
+    </div>
+
+    <div class="acciones">
+      <button (click)="descargarPDF()">
+        Descargar comprobante
+      </button>
+
+      <button class="secundario" (click)="volverInicio()">
+        Volver al inicio
+      </button>
+    </div>
+
+  </div>
+}

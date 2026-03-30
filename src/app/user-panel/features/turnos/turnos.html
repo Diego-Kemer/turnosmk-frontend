@@ -1,0 +1,15 @@
+<div class="turnos">
+    <header>
+        <div class="header-title">
+            <a (click)="hoy()" routerLink="hoy" class="turnos-btn" routerLinkActive="activo">Hoy</a>
+            <a (click)="manana()" routerLink="manana" class="turnos-btn" routerLinkActive="activo">Semana</a>
+            <a (click)="proximos()" routerLink="proximos" class="turnos-btn" routerLinkActive="activo">Próximos</a>
+        </div>
+        <div class="header-a">
+            <app-add-turno></app-add-turno>
+        </div>
+    </header>
+    <main>
+        <router-outlet />
+    </main>
+</div>

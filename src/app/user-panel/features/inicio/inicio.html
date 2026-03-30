@@ -1,0 +1,72 @@
+<div class="body">
+  <header>
+    <div class="header-saludo">
+      <h2>Este es tu panel, {{user()?.nombre}}</h2>
+    </div>
+    <div class="header-button">
+      <app-add-turno></app-add-turno>
+    </div>
+  </header>
+  <main>
+    <div class="data-turnos">
+      @for (data of dataTurnos(); track data._id) {
+        <app-inicio-data-turnos [turnosData]="data"></app-inicio-data-turnos>
+      }
+    </div>
+    <div class="data">
+      <div class="data-agenda">
+        <span>Tu agenda hoy</span>
+        <div class="agenda-info">
+          @if (_turnos.turnosHoy().length > 0) {
+            @for (turno of _turnos.turnosHoy(); track turno._id) {
+              <app-inicio-data-schedule [turno]="turno"></app-inicio-data-schedule>
+            }
+          }
+          @else {
+            <i>No tienes turnos para hoy</i>
+          }
+        </div>
+      </div>
+      <div class="data-calendario">
+        <span>Calendario</span>
+        <!-- -------------------------------------- -->
+        <div class="calendar">
+          <!-- Header -->
+          <div class="calendar-header">
+            <button (click)="prevMonth()">‹</button>
+            <span class="month">{{ monthYear }}</span>
+            <button (click)="nextMonth()">›</button>
+          </div>
+
+          <!-- Días semana -->
+          <div class="weekdays">
+            @for (d of daysOfWeek; track $index) {
+              <span>{{ d }}</span>
+            }
+          </div>
+
+          <!-- Grilla -->
+          <div class="days-grid">
+            @for (_ of [].constructor(firstDayOffset); track $index) {
+              <span class="empty"> </span>
+            }
+            @for (day of daysInMonth; track $index) {
+              <button
+                class="day"
+                [class.selected]="isSelected(day)"
+                [class.has-events]="hasEvents(day)"
+                (click)="selectDay(day)"
+              >
+                {{ day }}
+              </button>
+            }
+          </div>
+        </div>
+        <!-- --------------------------------- -->
+      </div>
+    </div>
+  </main>
+  <footer>
+    <button>Ver Turnos</button>
+  </footer>
+</div>

@@ -1,0 +1,39 @@
+<div class="calendar">
+  <div class="header">
+    <button class="cambiarMes" (click)="cambiarMes(-1)">
+      <span class="material-symbols-outlined"> arrow_back </span>
+    </button>
+
+    <span class="calendar-mes">
+      {{ mesActual().toLocaleDateString('es-AR', { month: 'long', year: 'numeric' }) }}
+    </span>
+
+    <button class="cambiarMes" (click)="cambiarMes(1)">
+      <span class="material-symbols-outlined"> arrow_forward </span>
+    </button>
+  </div>
+
+  <div class="nameDay">
+    @for (dia of diasSemana; track dia) {
+      <span>{{dia}}</span>
+    }
+  </div>
+  <div class="grid">
+    @for (dia of diasDelMes(); track $index) {
+      @if (dia) {
+        <button
+          class="day"
+          [class.disabled]="esPasado(dia) || !esDiaHabil(dia)"
+          [disabled]="esPasado(dia) || !esDiaHabil(dia)"
+          [class.selected]="daySelected === dia.toString()"
+          (click)="seleccionarFecha(dia)"
+        >
+          {{ dia.getDate() }}
+        </button>
+      }
+      @else {
+        <div class="empty"></div>
+      }
+    }
+  </div>
+</div>

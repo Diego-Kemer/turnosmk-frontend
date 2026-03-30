@@ -1,0 +1,12 @@
+<div class="turnos-list">
+  <div class="list-header">
+    <span>Cliente</span>
+    <span>Fecha</span>
+    <span>Hora</span>
+    <span>Contacto</span>
+    <span>Estado</span>
+  </div>
+  @for (turn of listTurnos; track turn._id) {
+    <app-turnos-item [turno]="turn"></app-turnos-item>
+  }
+</div>

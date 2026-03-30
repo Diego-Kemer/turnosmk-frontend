@@ -1,0 +1,24 @@
+<div class="clientes">
+  <header>
+    <div class="clientes-search">
+      <input 
+      type="text" 
+      placeholder="Buscar clientes..." 
+      [formControl]="busqueda"/>
+      <button (click)="filtrarClientes()"><span class="material-symbols-outlined"> search </span></button>
+    </div>
+  </header>
+  <main class="clientes-list">
+    <div class="list-header">
+      <span>Nombre</span>
+      <span>Email</span>
+      <span>Teléfono</span>
+      <span>Última Visita</span>
+    </div>
+    <div class="list-main">
+      @for (cliente of clientes(); track cliente._id) {
+        <app-clientes-item [cliente]="cliente"></app-clientes-item>
+      }
+    </div>
+  </main>
+</div>

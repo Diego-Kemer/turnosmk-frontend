@@ -1,0 +1,28 @@
+<div class="mi-link">
+  <div class="mi-link-header">
+    <h2>Mi Link</h2>
+    <p>
+      Comparte tu link personalizado con otros usuarios para que puedan acceder a tu perfil
+      fácilmente.
+    </p>
+  </div>
+  <main class="mi-link-content">
+    <div class="mi-link-url">
+      <div class="url-link">
+        <span class="material-symbols-outlined"> link </span>
+        <p>{{ miLinkUrl }}</p>
+      </div>
+      <div class="url-button">
+        <button (click)="copyLink()">
+          <span class="material-symbols-outlined"> content_copy </span>
+          <span>Copiar Link</span>
+        </button>
+      </div>
+    </div>
+    @if (copySuccess) {
+      <div class="copy-success">
+        <h4>¡Link copiado al portapapeles!</h4>
+      </div>
+    }
+  </main>
+</div>

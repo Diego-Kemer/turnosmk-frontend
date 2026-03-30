@@ -1,0 +1,116 @@
+.body{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    /* padding: 10%; */
+    display: flex;
+    align-items: center;
+    background: var(--primary);
+}
+
+.form{
+    display: flex;
+    margin: auto;
+    width: 100%;
+    align-items: center;
+    margin-top: 10%;
+}
+.form-login{
+    width: 35%;
+    margin: 20px auto;
+    padding: 20px;
+    border: solid 1px #fff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 12px rgba(255, 255, 255, 0.795),
+                -2px -2px 12px rgba(255, 255, 255, 0.788);
+    color: #fff;
+    background: #000000d5;
+}
+.form-block{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.form-block input{
+    background-color: transparent;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    padding: 3px;
+    border-radius: 3px;
+    border-bottom: solid 1px var(--details);
+    color: #dddcdc;
+}
+.form-block input:focus-visible{
+    background: #ffffff34;
+    border: solid 1px var(--bordeBajo);
+  }
+  .form-block label{
+    margin-top: 10px;
+  }
+.form-block button{
+    width: 100%;
+    color: #fff;
+    background: rgb(151, 92, 3);
+    padding: 5px;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+}
+.form-login button{
+    background-color: #000;
+    border-radius: 3px;
+    margin-top: 10px;
+    color: #fff;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: solid 1px #fff;
+    padding: 10px 0px;
+}
+.form-login button:hover{
+    background: var(--bordeBajo);
+}
+button:hover{
+    background: var(--bordeBajo);
+}
+
+.error{
+    height: 15px;
+}
+.error i{
+    font-size: 10px;
+    color: var(--details);
+}
+
+button:disabled{
+    filter: brightness(0.4);
+}
+button:disabled:hover{
+    background: #000;
+}
+
+@media screen and (max-width: 980px) {
+    .form-login{
+        width: 50%;
+    }
+}
+@media screen and (max-width: 570px) {
+    .form{
+        margin-top: 20%;
+    }
+    .form-login{
+        width: 80%;
+    }
+}
+@media screen and (max-width: 320px) {
+    .titulo{
+        display: none;
+    }
+    .form-login{
+        width: 90%;
+    }
+}

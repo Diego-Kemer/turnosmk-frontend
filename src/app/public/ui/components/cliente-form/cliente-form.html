@@ -1,0 +1,67 @@
+@if (fecha && hora) {
+  <div class="form-container">
+    <h3>Ingesa tus datos para confirmar turno</h3>
+
+    <div class="resumen">
+      <p>
+        Fecha:<strong>{{ fecha | date: "EEEE d 'de' MMMM" }}</strong>
+      </p>
+      <p>
+        Hora:<strong>{{ hora }}</strong>
+      </p>
+    </div>
+
+    <form [formGroup]="form">
+      <input type="text" placeholder="Nombre" formControlName="nombre" />
+      <i class="error">
+        @if (form.get('nombre')?.touched && form.get('nombre')?.invalid) {
+              @if (form.get('nombre')?.errors?.['required']) {
+                El nombre es obligatorio
+              }
+              @if (form.get('nombre')?.errors?.['minlength']) {
+                El nombre debe tener al menos 3 caracteres
+              }
+        }
+      </i>
+
+      <input type="text" placeholder="Teléfono" formControlName="telefono" />
+      <i class="error">
+        @if (form.get('telefono')?.touched && form.get('telefono')?.invalid) {
+              @if (form.get('telefono')?.errors?.['required']) {
+                El telefono es obligatorio
+              }
+              @if (form.get('telefono')?.errors?.['minlength']) {
+                El telefono debe tener al menos 10 dígitos
+              }
+        }
+      </i>
+
+
+      <input type="email" placeholder="ejemplo@gmail.com" formControlName="email" />
+      <i class="error">
+        @if (form.get('email')?.touched && form.get('email')?.invalid) {
+            @if (form.get('email')?.errors?.['required']) {
+              El email es obligatorio
+            }
+            @if (form.get('email')?.errors?.['email']) {
+              El formato del email no es válido
+            }
+        }
+      </i>
+
+      <textarea placeholder="Notas (opcional)" formControlName="notas"> </textarea>
+    </form>
+
+    @if (error()) {
+      <p class="error">{{ error() }}</p>
+    }
+
+    <button [disabled]="form.invalid || loading()" (click)="crearTurno()">
+      @if (loading()) {
+        Confirmando...
+      } @else {
+        Confirmar turno
+      }
+    </button>
+  </div>
+}

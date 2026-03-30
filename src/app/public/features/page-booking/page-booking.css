@@ -1,0 +1,23 @@
+.body{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.header {
+  border-top: 6px solid;
+  padding: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

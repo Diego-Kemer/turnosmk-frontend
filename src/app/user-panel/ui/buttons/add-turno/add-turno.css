@@ -1,0 +1,12 @@
+button.add-turno{
+    background: var(--btn);
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+button.add-turno:hover{
+    background: var(--details);
+}

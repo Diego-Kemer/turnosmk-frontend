@@ -1,0 +1,6 @@
+export const environment = {
+  production: false,
+  // apiUrl: 'http://localhost:5000',
+  apiUrl: 'https://sistema-de-turnos-backend-f0af.onrender.com',
+  apiUrlPublic: 'http://localhost:4200'
+};

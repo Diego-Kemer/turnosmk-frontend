@@ -1,0 +1,30 @@
+.turnos{
+    width: 100%;
+    padding: 10px;
+}
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}   
+header .turnos-btn{
+    background: var(--space);
+    color: #000;
+    padding: 8px 15px;
+    border: solid 1px #000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+header .turnos-btn:hover{
+    background: var(--btn);
+    filter: brightness(.9);
+    color: #fff;
+}
+
+header .turnos-btn.activo{
+    background: var(--btn);
+    color: #fff;
+}

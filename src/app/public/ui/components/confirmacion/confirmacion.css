@@ -1,0 +1,43 @@
+.card-confirmacion {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.icono {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.detalle {
+  margin: 20px 0;
+  text-align: left;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #2563eb;
+  color: white;
+  margin: 5px;
+}
+
+button.secundario {
+  background: #e5e7eb;
+  color: #111;
+}
+
+.estado {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.error {
+  color: red;
+}

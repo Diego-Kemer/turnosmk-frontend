@@ -1,0 +1,26 @@
+@if (empresa(); as emp) {
+  <div class="body">
+
+    <div class="header" [style.borderColor]="emp.colorTema">
+      <h1>{{ emp.name }}</h1>
+      <p>Reservar turno</p>
+      <p>{{ emp.descripcion }}</p>
+    </div>
+  
+    <div class="layout">
+      <app-calendar [empresa]="emp" >
+      </app-calendar>
+  
+      <app-horario
+        [empresaId]="emp._id"
+      >
+      </app-horario>
+  
+      <app-cliente-form
+        [empresaId]="emp._id"
+        (turnoCreado)="irAConfirmacion($event)"
+      >
+      </app-cliente-form>
+    </div>
+  </div>
+}

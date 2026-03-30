@@ -1,0 +1,49 @@
+.schedule{
+    display: flex;
+    padding: 20px 15px ;
+    background-color: var(--space);
+    width: 100%;
+    justify-content: space-between;
+    border-top: solid 1px #00000057;
+}
+.schedule-info{
+    display: flex;
+}
+.schedule-time{
+    font-size: 20px;
+    margin-right: 15px;
+}
+.schedule-details{
+    display: flex;
+    flex-direction: column;
+}
+.schedule-client{
+    font-size: 20px;
+}
+
+.schedule-button button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    margin-left: 10px;
+    text-transform: capitalize;
+}
+.schedule-button button:hover{
+    filter: brightness(1.2);
+}
+.confirmado{
+    background: #0e8b33fa;
+}
+.pendiente{
+    background: #e0a800fa;
+}
+.cancelado{
+    background: #dc3545fa;
+}
+

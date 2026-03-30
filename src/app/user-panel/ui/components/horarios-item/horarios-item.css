@@ -1,0 +1,52 @@
+.horas-x-dia{
+    background: var(--space);
+    padding: 10px;
+}   
+.dia-rangos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.dia-rangos .rangos{
+    display: flex;
+}
+.dia-rangos .rango{
+    border: solid 1px #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    align-items: center;
+    display: flex;
+}
+.dia-rangos button{
+    background: var(--btn);
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    text-transform: uppercase;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
+}   
+.dia-rangos button:hover{
+    filter: brightness(1.1);
+}
+.rangos .rango-btn{
+    font-size: 14px;
+    padding: 0px;
+    color: red;
+    background: transparent;
+    margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+    .dia-rangos .rangos{
+        flex-direction: column;
+    }
+    .dia-rangos .rango{
+        margin-top: 5px;
+    }
+}

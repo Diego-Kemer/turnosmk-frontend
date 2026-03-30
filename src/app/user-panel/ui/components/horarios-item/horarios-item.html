@@ -1,0 +1,29 @@
+<div class="horario-item">
+  <div class="horas-x-dia">
+    <h4>{{diasSemana[diaSelect.diaSemana]}}</h4>
+  </div>
+  <div class="dia-rangos">
+    <div class="rangos">
+        @for (rango of diaSelect.rangos; track $index) {
+            <div class="rango"> 
+              <span>
+                {{rango.desde}} - {{rango.hasta}} 
+              </span>
+              <button (click)="deleteRango(rango._id)" class="rango-btn">
+                <span class="material-symbols-outlined">
+                  delete
+                </span>
+              </button>
+            </div>
+        }
+    </div>
+    <div class="add-rango">
+      <button (click)="edit('lunes')">
+        <span class="material-symbols-outlined"> alarm_add </span>
+      </button>
+    </div>
+  </div>
+</div>
+@if (addRango) {
+  <app-add-rango [dia]="diaSelect" (closeEvent)="toggleAddRango()"></app-add-rango>
+}
