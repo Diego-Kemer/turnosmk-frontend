@@ -14,7 +14,7 @@ export class MiLink implements OnInit{
   public copySuccess: boolean = false;
   private _empresa = inject(EmpresaStore)
   public empresa!: any;
-  public url: string = environment.apiUrlPublic
+  public url: string = window.location.origin;
   
   ngOnInit(): void {
     this.empresa = this._empresa.empresa
