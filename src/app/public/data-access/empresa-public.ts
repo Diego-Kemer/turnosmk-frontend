@@ -22,6 +22,10 @@ export class EmpresaPublic {
 
   constructor() {
     effect(() => {
+      const empresa = this._empresa();
+
+      if (!empresa) return;
+
       this.document.documentElement.style.setProperty(
         '--color-principal',
         this.primaryColor()
@@ -41,7 +45,7 @@ export class EmpresaPublic {
     return this.http.get<EmpresaPublica>(`${this.API_URL}/api/empresa/public/${slug}`)
       .subscribe((emp: any) => {
         this._empresa.set(emp.emp); 
-        this.setPrimaryColor(emp.colorTema);
+        this.setPrimaryColor(emp.emp.colorTema);
       });
   }
 
@@ -65,6 +69,6 @@ export class EmpresaPublic {
   }
 
   setPrimaryColor(color?: string) {
-    this.primaryColor.set(color || '#0f27ff');
+    this.primaryColor.set(color || '#3867c1');
   }
 }

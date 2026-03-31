@@ -49,6 +49,7 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.247);
   background: color-mix(in srgb, var(--color-principal) 50%, white);
   color: #fff;
+  transition: transform .18s ease, box-shadow .18s ease;
 }
 .empty {
   height: 40px; /* mismo tamaño que el botón */
@@ -58,6 +59,7 @@
   background: var(--color-principal);
   color: #fff;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.363);
+  transform: translateY(-2px);
 }
 
 .day.disabled {
@@ -68,4 +70,6 @@
 }
 .selected{
   background-color: var(--color-principal);
+  transform: scale(1.04);
+  box-shadow: 0 8px 18px rgba(0,0,0,.08);
 }

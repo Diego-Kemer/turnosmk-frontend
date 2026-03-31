@@ -1,42 +1,64 @@
 .horarios {
-  margin-top: 10px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.246);
-  padding: 20px;
-  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
-.horarios h3{
-  text-transform: capitalize;
+
+.horarios h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.horarios p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.95rem;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-  gap: 10px;
-  margin-top: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 12px;
+  margin-top: 6px;
 }
 
 .slot {
-  padding: 10px 5px;
-  border-radius: 6px;
-  border: 1px solid #0000004b;
+  border: 1px solid #e2e8f0;
   background: white;
+  border-radius: 18px;
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e293b;
   cursor: pointer;
-  transition: 0.2s;
-  color: var(--color-principal);
-  font-weight: 700;
-  font-size: large;
+  transition: all 0.22s ease;
 }
 
-.slot:hover {
-  background: #f3f4f6;
+.slot:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  border-color: #cbd5e1;
+  background: color-mix(in srgb, var(--color-principal) 50%, white);
 }
 
 .slot.selected {
-  background: #4f46e5;
+  background: var(--color-principal);
   color: white;
-  border: none;
+  border-color: var(--color-principal);
+  transform: scale(1.03);
+  box-shadow: 0 10px 22px rgba(56, 103, 193, 0.22);
 }
-button:disabled {
-  opacity: 0.5;
+
+.slot:disabled {
+  background: #f8fafc;
+  color: #94a3b8;
+  border-color: #e2e8f0;
   cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.slot:active:not(:disabled) {
+  transform: scale(0.98);
 }

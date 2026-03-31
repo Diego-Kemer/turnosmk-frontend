@@ -7,7 +7,6 @@
 }
 
 :root{
-    --color-principal: #0f27ff;
     --primary: #0b464e;
     --secondary: linear-gradient(135deg, #0f172a, #1e293b, #020617);;
     --details: #e98a3a;
