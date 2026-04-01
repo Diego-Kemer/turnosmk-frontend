@@ -9,13 +9,15 @@ import { EmpresaStore } from '../../data-access/empresa.store';
 import { UserStorage } from '../../data-access/user.storage';
 import { User } from '../../ui/interfaces/user';
 import { TurnosStorage } from '../../data-access/turnos.storage';
+import { RouterLinkWithHref } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
   imports: [
     InicioDataTurnos,
     InicioDataSchedule,
-    AddTurno
+    AddTurno,
+    RouterLinkWithHref
 ],
   templateUrl: './inicio.html',
   styleUrl: './inicio.css',
